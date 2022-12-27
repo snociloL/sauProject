@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+// use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
 use App\Services\V1\StudentQuery;
+// use App\Http\Requests\V1\BulkController;
 use App\Http\Resources\V1\StudentResource;
 use App\Http\Resources\V1\StudentCollection;
 
@@ -44,8 +46,7 @@ class StudentController extends Controller
             'address' => 'required',
             'studyCourse' => 'required'
         ]);
-    return Student::create($request->all());
-
+        return Student::create($request->all());
     }
     
     /**
@@ -108,4 +109,7 @@ class StudentController extends Controller
     // {
     //     return Student::where('email', 'like', $email. '%')->get();
     // }
+
+
+
 }

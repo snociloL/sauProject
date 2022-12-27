@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AuthController;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,8 +36,12 @@ Route::resource('students', StudentController::class);
       
 Route::middleware('auth:api')->group( function () {
     Route::get('students/search/{name}', [StudentController::class, 'search']);
-    Route::post('students', [StudentController::class, 'store']);
+    Route::post('students/store', [StudentController::class, 'store']);
     Route::post('logout', [AuthController::class, 'logout']);
-    Route::put('students/{id}', [StudentController::class, 'update']);
-    Route::delete('students/{id}', [StudentController::class, 'destroy']);
+    Route::put('students/update/{id}', [StudentController::class, 'update']);
+    Route::delete('students/delete/{id}', [StudentController::class, 'destroy']);
+    // Import
+//     Route::post('students/bulk', ['uses' => 'BulkControllerRequest@bulkStore']);
+//     Route::post('/import_parse', [\App\Http\Controllers\ImportController::class, 'parseImport'])->name('import_parse');
+// Route::post('/import_process', [\App\Http\Controllers\ImportController::class, 'processImport'])->name('import_process');
 });

@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Services\V1\StudentQuery;
 use App\Http\Resources\V1\StudentResource;
+use App\Http\Resources\V1\StudentCollection;
+
 
 class StudentController extends Controller
 {
@@ -13,9 +16,18 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-            return Student::all();
+        $filter = new StudentQuery();
+        $queryItems = $filter->transform($request);
+        
+        if (count($queryItems) == 0) {
+            return new StudentCollection(Student::paginate());
+        }else {
+            return new StudentCollection(Student::where($queryItems)->paginate());
+        }
+            //return Student::all();
+            
     }
 
     /**
@@ -45,7 +57,7 @@ class StudentController extends Controller
     public function show($id)
     {
         return Student::find($id);
-        //return new StudentResource($id);
+        //return new StudentCollection($id);
     }
 
     /**

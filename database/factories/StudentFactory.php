@@ -21,7 +21,7 @@ class StudentFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'address' => fake()->address(), 
-            'studyCourse' => fake()->lexify(),
+            'studyCourse' => fake()->bothify(),
         ];
     }
 

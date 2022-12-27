@@ -24,6 +24,14 @@ Creating a basic API of South of Australia University that:
 I have used/watch a tons of guides and videos on figuring this thing out, I owe those people a massive hug and graditude for actually sharing those insane tips and tricks. 
 
 
+## Guidelines
+- use CMD and open to the file directory,
+- fire up xampp, as this will be using MySql,
+- to start things fresh, insert `php artisan migrate:refresh --seed` and hit enter,
+- to link together the database and our API, insert `php artisan serve`,
+- now we can use POSTMAN.
+
+
 ## Video Explanation
 
 

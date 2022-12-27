@@ -71,7 +71,8 @@ class StudentController extends Controller
     {
         $student = Student::find($id);
         $student->update($request->all());
-        return $student;
+        $student;
+        return response(['message' => 'Data selected has been updated!'], 201);
     }
 
     /**
@@ -82,7 +83,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-       return Student::destroy($id);
+        Student::destroy($id);
+        return response(['message' => 'Data selected has been deleted!'], 201);
     }
 
     /**
@@ -93,7 +95,7 @@ class StudentController extends Controller
      */
     public function search($name)
     {
-        return Student::where('name', 'like', $name. '%')->get();
+        return new StudentCollection(Student::where('name', 'like', $name. '%')->get());
     }
 
         /**

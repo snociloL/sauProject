@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 class StudentQuery {
     protected $safeParms = [
         'name' => ['eq'],
-        'address' => ['eq']
+        'email' => ['eq']
     ];
 
     protected $operatorMap = [
@@ -18,7 +18,7 @@ class StudentQuery {
     ];
 
     protected $columnMap = [
-        'address' => 'address'
+        'email' => 'email'
     ];
     public function transform(Request $request) {
         $eloQuery = [];

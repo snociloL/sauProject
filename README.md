@@ -22,7 +22,7 @@ Creating a basic API of South of Australia University that:
 ## Disclaimer :3c
 
 I have used/watch a tons of guides and videos on figuring this thing out, I owe those people a massive hug and graditude for actually sharing those insane tips and tricks. 
-PS. Almost forgot to mention, I atill couldn't figured out how to do bulk operations sorry :pray:
+PS. Almost forgot to mention, I still couldn't figure out how to do bulk operations sorry :pray:
 
 
 ## Guidelines

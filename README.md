@@ -33,7 +33,7 @@ I have used/watch a tons of guides and videos on figuring this thing out, I owe 
 
 
 ## Video Explanation
-
+https://photos.app.goo.gl/9gJSk8VoqMxQxV7BA - once again I apologized for the long video LOL
 
 
 ## Important Links

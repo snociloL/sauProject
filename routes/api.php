@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::resource('students', StudentController::class);
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -35,6 +34,7 @@ Route::resource('students', StudentController::class);
 //Route::post('login', [RegisterController::class, 'login']);
       
 Route::middleware('auth:api')->group( function () {
+    Route::resource('students', StudentController::class);
     Route::get('students/search/{name}', [StudentController::class, 'search']);
     Route::post('students/store', [StudentController::class, 'store']);
     Route::post('logout', [AuthController::class, 'logout']);

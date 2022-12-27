@@ -21,7 +21,7 @@ class StudentFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'address' => fake()->address(), 
-            'studyCourse' => fake()->bothify(),
+            'studyCourse' => fake()->regexify('[A-Z]{2}[0-9]{3}'),
         ];
     }
 
